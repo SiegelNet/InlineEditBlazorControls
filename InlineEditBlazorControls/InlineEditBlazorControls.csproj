@@ -3,8 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Marcel Siegel</Authors>
-    <Company />
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>SiegelNet</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <Description>In-place editing controls</Description>
   </PropertyGroup>
 
   

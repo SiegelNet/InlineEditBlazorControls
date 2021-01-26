@@ -1,7 +1,26 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h1>InlineEditBlazorControls-Demo</h1>
 
-Welcome to your new app.
+<h2>Text-Edit</h2>
+<InlineTextEditor EditableValue="@DemoString" ValueSaved="SummaryEdited"></InlineTextEditor>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div>
+    @DemoString
+</div>
+
+@code {
+
+    public string DemoString { get; set; } = "Test";
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    void SummaryEdited(InlineEditTextCallback e)
+    {
+        DemoString = e.Value;
+    }
+}
+

@@ -8,7 +8,7 @@ namespace InlineEditBlazorControls
         public bool EditMode { get; set; } = false;
 
         [Parameter]
-        public EventCallback<Tuple<string, int?>> ValueSaved { get; set; }
+        public EventCallback<InlineEditTextCallback> ValueSaved { get; set; }
 
         [Parameter]
         public string EditableValue { get; set; } = "";
@@ -23,7 +23,7 @@ namespace InlineEditBlazorControls
 
         void SaveValue()
         {
-            ValueSaved.InvokeAsync(new Tuple<string, int?>(EditableValue, EditableValueId));
+            ValueSaved.InvokeAsync(new InlineEditTextCallback(EditableValue, EditableValueId));
             EditMode = false;
         }
 
@@ -31,5 +31,14 @@ namespace InlineEditBlazorControls
         {
             EditMode = false;
         }
+    }
+
+    public record InlineEditTextCallback
+    {
+        public int? ReferenceId { get; set; }
+        public string Value { get; set; }
+
+        public InlineEditTextCallback(string value) => (Value) = (value);
+        public InlineEditTextCallback(string value, int referenceId) => (Value, ReferenceId) = (value, referenceId);
     }
 }
