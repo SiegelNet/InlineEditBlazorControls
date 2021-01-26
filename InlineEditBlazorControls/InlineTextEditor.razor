@@ -1,0 +1,14 @@
+﻿@if (EditMode)
+{
+    <div class="input-group">
+        <input type="text" name="name" @bind="@EditableValue" class="form-control form-control-sm" />
+        <div class="input-group-append" id="button-addon3">
+            <button class="btn btn-sm btn-primary" type="button" @onclick="(() => SaveValue())">Save</button>
+            <button class="btn btn-sm btn-outline-danger" type="button" @onclick="(() => CancelEditMode())">Cancel</button>
+        </div>
+    </div>
+}
+else
+{
+    <a href="" @onclick:preventDefault @onclick="(() => ActivateEditMode())">...</a>
+}
