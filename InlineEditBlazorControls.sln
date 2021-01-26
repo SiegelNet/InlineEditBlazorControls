@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InlineEditBlazorControls.WebApp", "InlineEditBlazorControls.WebApp\InlineEditBlazorControls.WebApp.csproj", "{B2EB22B4-016E-4DBC-8306-DEBE7A684B3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InlineEditBlazorControls.WebApp", "InlineEditBlazorControls.WebApp\InlineEditBlazorControls.WebApp.csproj", "{B2EB22B4-016E-4DBC-8306-DEBE7A684B3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InlineEditBlazorControls", "InlineEditBlazorControls\InlineEditBlazorControls.csproj", "{0BDB8961-193F-4582-967A-DBB227EDF061}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InlineEditBlazorControls", "InlineEditBlazorControls\InlineEditBlazorControls.csproj", "{0BDB8961-193F-4582-967A-DBB227EDF061}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
