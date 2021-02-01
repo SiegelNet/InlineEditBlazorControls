@@ -1,4 +1,4 @@
-using InlineEditBlazorControls.WebApp.Data;
+using InlineEditBlazorControls.WebApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +28,7 @@ namespace InlineEditBlazorControls.WebApp
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<SoccerDataService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

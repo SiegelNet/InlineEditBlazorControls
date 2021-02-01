@@ -10,5 +10,5 @@
 }
 else
 {
-    <a href="" @onclick:preventDefault @onclick="(() => ActivateEditMode())">...</a>
+    <a href="" @onclick:preventDefault @onclick="(() => ActivateEditMode())">@(string.IsNullOrEmpty(EditableValue) ? "..." : EditableValue )</a>
 }

@@ -1,26 +1,61 @@
 ﻿@page "/"
+@inject InlineEditBlazorControls.WebApp.Services.SoccerDataService SoccerService;
 
 <h1>InlineEditBlazorControls-Demo</h1>
 
 <h2>Text-Edit</h2>
-<InlineTextEditor EditableValue="@DemoString" ValueSaved="SummaryEdited"></InlineTextEditor>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>MatchId</th>
+            <th>DateTime</th>
+            <th>Teams</th>
+            <th>League</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var match in Matches)
+        {
+            <tr>
+                <td>@match.MatchId</td>
+                <td>@match.MatchDateTime</td>
+                <td>
+                    <InlineTextEditor EditableValue="@match.Team1.TeamName" EditableValueId="@match.MatchId" ValueSaved="TeamEdited"></InlineTextEditor>
+                    :
+                    <InlineTextEditor EditableValue="@match.Team2.TeamName" EditableValueId="@match.MatchId" ValueSaved="TeamEdited"></InlineTextEditor>
+
+                </td>
+
+                <td>@match.LeagueName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
 
 <div>
-    @DemoString
+    @DemoId - @DemoString
 </div>
 
 @code {
 
     public string DemoString { get; set; } = "Test";
+    public int? DemoId { get; set; } = 0;
+
+    public List<InlineEditBlazorControls.WebApp.Services.Match> Matches { get; set; } = new List<Services.Match>();
 
     protected override async Task OnInitializedAsync()
     {
-
+        Matches = await SoccerService.GetMatches();
     }
 
-    void SummaryEdited(InlineEditTextCallback e)
+    void TeamEdited(InlineEditTextCallback e)
     {
         DemoString = e.Value;
+        DemoId = e.ReferenceId;
     }
 }
 
