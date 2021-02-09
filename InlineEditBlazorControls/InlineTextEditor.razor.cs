@@ -10,6 +10,7 @@ namespace InlineEditBlazorControls
         [Parameter]
         public EventCallback<InlineEditTextCallback> ValueSaved { get; set; }
 
+
         [Parameter]
         public string EditableValue { get; set; } = "";
 

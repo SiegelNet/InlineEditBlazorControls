@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -33,6 +34,13 @@ namespace InlineEditBlazorControls.WebApp.Services
             {
                 var stringresult = await response.Content.ReadAsStringAsync();
                 var res = JsonConvert.DeserializeObject<List<Match>>(stringresult);
+
+                if (res.Any())
+                {
+                    res.ElementAt(0).Comment = "Try to edit me!";
+                    res.ElementAt(2).Comment = "Very nice match";
+                }
+
                 return res;
             }
 
@@ -47,6 +55,8 @@ namespace InlineEditBlazorControls.WebApp.Services
         public DateTime? MatchDateTime { get; set; }
 
         public string LeagueName { get; set; }
+
+        public string Comment { get; set; }
 
         public Team Team1 { get; set; }
 
