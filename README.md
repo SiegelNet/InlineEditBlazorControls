@@ -19,8 +19,8 @@ In-place editing controls for Blazor - inspired from X-editable
     }
 }
 ```
-
-
-
-
 ![Textedit](.github/images/textedit.png)
+
+## Numeric Edit
+
+coming soon...
