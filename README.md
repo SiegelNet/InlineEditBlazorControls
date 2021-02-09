@@ -5,8 +5,7 @@ In-place editing controls for Blazor - inspired from X-editable
 
 ```html
 <InlineTextEditor EditableValue="@match.Comment" EditableValueId="@match.MatchId" ValueSaved="CommentEdited"></InlineTextEditor>
-```
-```csharp
+
 @code {
     void CommentEdited(InlineEditTextCallback e)
     {
