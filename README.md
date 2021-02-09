@@ -1,6 +1,8 @@
 # InlineEditBlazorControls
 In-place editing controls for Blazor - inspired from X-editable
 
+- currently Bootstrap only
+
 ## Text Edit
 
 ```html
