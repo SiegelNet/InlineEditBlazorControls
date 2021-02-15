@@ -10,5 +10,6 @@
 }
 else
 {
-    <a href="" @onclick:preventDefault @onclick="(() => ActivateEditMode())">@(string.IsNullOrEmpty(EditableValue) ? "..." : EditableValue )</a>
+    <a href="" @onclick:preventDefault class="@PlaceholderCssClass"
+       @onclick="(() => ActivateEditMode())">@(string.IsNullOrEmpty(EditableValue) ? (!string.IsNullOrEmpty(Placeholder) ? Placeholder : "...") : EditableValue )</a>
 }

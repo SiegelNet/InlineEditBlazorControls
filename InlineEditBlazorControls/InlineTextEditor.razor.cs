@@ -15,7 +15,18 @@ namespace InlineEditBlazorControls
         public string EditableValue { get; set; } = "";
 
         [Parameter]
+        public string Placeholder { get; set; } = "";
+
+        [Parameter]
         public int EditableValueId { get; set; }
+
+        public string PlaceholderCssClass 
+        { 
+            get 
+            {
+                return !string.IsNullOrEmpty(EditableValue) ? "" : "text-muted small";
+            }
+        }
 
         void ActivateEditMode()
         {
