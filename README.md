@@ -2,6 +2,7 @@
 In-place editing controls for Blazor - inspired from X-editable
 
 - click direct on item to edit - an input box appears
+- available as nuget package: *Install-Package InlineEditBlazorControls*
 - currently Bootstrap only
 
 ## Text Edit
@@ -18,8 +19,8 @@ In-place editing controls for Blazor - inspired from X-editable
     }
 }
 ```
-
-
-
-
 ![Textedit](.github/images/textedit.png)
+
+## Numeric Edit
+
+coming soon...
